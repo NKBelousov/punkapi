@@ -1,0 +1,64 @@
+{
+  "name": "punkapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --config webpack.config.js --mode production",
+    "dev": "NODE_ENV=development ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.js --mode development",
+    "lint:write": "eslint --debug src/ --fix",
+    "lint": "eslint --debug src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "npm run lint:write",
+      "git add"
+    ]
+  },
+  "keywords": [],
+  "author": "NKBelousov",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-jest": "^24.8.0",
+    "connected-react-router": "^6.4.0",
+    "history": "^4.9.0",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-observable": "^1.1.0",
+    "rxjs": "^6.5.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.87.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.6",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
