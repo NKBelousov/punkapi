@@ -15,6 +15,7 @@ module.exports = {
     },
   },
   devServer: {
+    open: true,
     contentBase: './dist',
     historyApiFallback: true,
   },
@@ -46,7 +47,7 @@ module.exports = {
       },
       showErrors: isProduction,
       template: path.resolve(__dirname, 'src/template.ejs'),
-      title: 'Noveo Rest API',
+      title: 'Punk API',
     }),
   ],
 };
