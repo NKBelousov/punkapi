@@ -1,9 +1,11 @@
 import {
-  Container, Grid, Image, Input, Divider, Header,
+  Container, Grid, Input, Divider,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 import chunk from 'lodash/chunk';
+
+import BeerCard from '~/components/BeerCard';
 
 const COLUMN_COUNT = 9;
 
@@ -26,11 +28,10 @@ const BeerList = memo(props => (
         <Grid.Row key={hashSum(beers)}>
           {beers.map(beer => (
             <Grid.Column key={beer.id}>
-              <Image src={beer.image_url} />
-              <Header as="h5" color="blue" size="small">
-                <Header.Content>{beer.name}</Header.Content>
-                <Header.Subheader>{beer.tagline}</Header.Subheader>
-              </Header>
+              <BeerCard
+                tagline={beer.tagline}
+                name={beer.name}
+              />
             </Grid.Column>
           ))}
         </Grid.Row>
