@@ -7,7 +7,7 @@ import chunk from 'lodash/chunk';
 
 import BeerCard from '~/components/BeerCard';
 
-const COLUMN_COUNT = 9;
+const COLUMN_COUNT = 5;
 
 const hashSum = array => array.reduce((accumulator, beer) => accumulator + beer.id.toString(), '');
 
@@ -23,7 +23,7 @@ const BeerList = memo(props => (
       size="massive"
     />
     <Divider />
-    <Grid columns={COLUMN_COUNT} divided>
+    <Grid columns={COLUMN_COUNT}>
       {chunk(props.items, COLUMN_COUNT).map(beers => (
         <Grid.Row key={hashSum(beers)}>
           {beers.map(beer => (
